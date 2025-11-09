@@ -1,10 +1,10 @@
 <?php
 interface handle_function {
-    public function handle($message);
+    public function handle($message) :string;
 }
 class FileLogger implements handle_function {
  
-    public function handle($message)
+    public function handle($message) :string
     {
         return 'Log to the file the message:' . $message;
     }
@@ -12,7 +12,7 @@ class FileLogger implements handle_function {
 
 class DatabaseLogger extends FileLogger implements handle_function    {
  
-    public function handle($message)
+    public function handle($message) :string
     {
         return "Log to the database the message:{$message}";
     }
