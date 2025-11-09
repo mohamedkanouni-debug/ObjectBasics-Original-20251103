@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
-    int x = 5;
+    int x ;
 void *calculate_double() {
 
    
@@ -19,6 +19,8 @@ int main()
 {
 
     pthread_t t1,t2;
+    printf("please input a number \n");
+    scanf("%d" , &x);
     pthread_create(&t1 , NULL , calculate_double , NULL );
     pthread_create(&t2 , NULL , display , NULL );
     pthread_join(t1 , NULL);
